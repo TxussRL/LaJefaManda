@@ -1,15 +1,88 @@
 /* ========================================
-   LA JEFA — MENÚ ROSA / PASTELERÍA
+   LA JEFA — NEGRO CÁLIDO & ROSA / PASTELERÍA CREMOSA
+   Con efecto de glaseado derritiéndose
    ======================================== */
+
+/* ===== RESET & VARIABLES ===== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta Chocolate Cálido + Rosa */
+    --chocolate: #2C1E1E;
+    --chocolate-claro: #3D2B2B;
+    --chocolate-card: #3A2828;
+    --chocolate-borde: #4A3535;
+    --rosa-cream: #F8A4C8;
+    --rosa-pastel: #F2789F;
+    --rosa-fuerte: #E84A8A;
+    --rosa-oscuro: #C2185B;
+    --rosa-claro: #FCCFE0;
+    --rosa-glow: rgba(232, 74, 138, 0.4);
+    --cream: #FFF5EE;
+    --cream-warm: #FFE8D6;
+    --blanco: #FFFFFF;
+    --texto-claro: #FAF0E6;
+    --texto-medio: #D4B8A0;
+    --texto-muted: #A08070;
+    --sombra-rosa: rgba(232, 74, 138, 0.18);
+    --sombra-rosa-hover: rgba(232, 74, 138, 0.4);
+
+    /* Fuentes */
+    --font-display: 'Pacifico', cursive;
+    --font-body: 'Poppins', sans-serif;
+
+    /* Radios */
+    --radius-card: 22px;
+    --radius-badge: 30px;
+
+    /* Transiciones */
+    --transition-smooth: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--chocolate);
+    color: var(--texto-claro);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Manchas de luz cálida de fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(ellipse at 15% 10%, rgba(232, 74, 138, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(248, 164, 200, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 70%, rgba(255, 232, 214, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 90%, rgba(242, 120, 159, 0.06) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
 
 /* ===== BARRA DE IDIOMA ===== */
 #lang-bar {
-    background: linear-gradient(90deg, var(--rosa-oscuro, #C2185B) 0%, var(--rosa-fuerte, #E05297) 100%);
+    background: linear-gradient(90deg, var(--chocolate) 0%, var(--chocolate-claro) 50%, var(--chocolate) 100%);
     padding: 8px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(194, 24, 91, 0.3);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--chocolate-borde);
 }
 
 .lang-inner {
@@ -32,9 +105,9 @@
 }
 
 .lang-btn {
-    background: rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.85);
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    background: rgba(248, 164, 200, 0.1);
+    color: var(--texto-medio);
+    border: 1.5px solid rgba(248, 164, 200, 0.18);
     border-radius: 20px;
     padding: 5px 16px;
     font-family: 'Poppins', sans-serif;
@@ -46,18 +119,18 @@
 }
 
 .lang-btn:hover {
-    background: rgba(255, 255, 255, 0.28);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(248, 164, 200, 0.2);
+    color: var(--rosa-cream);
+    border-color: rgba(248, 164, 200, 0.4);
     transform: translateY(-1px);
 }
 
 .lang-btn.active {
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--rosa-oscuro, #C2185B);
+    background: var(--rosa-fuerte);
+    color: var(--blanco);
     border-color: transparent;
     font-weight: 700;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 14px var(--rosa-glow);
 }
 
 @media (max-width: 600px) {
@@ -71,79 +144,17 @@
     }
 }
 
-/* ===== RESET & VARIABLES ===== */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    /* Paleta Rosa */
-    --rosa-suave: #FFF0F5;
-    --rosa-claro: #FFD6E0;
-    --rosa-medio: #FF8FAB;
-    --rosa-fuerte: #E05297;
-    --rosa-oscuro: #C2185B;
-    --rosa-pastel: #FFCAD4;
-    --rosa-cream: #FFF5F7;
-    --blanco: #FFFFFF;
-    --texto-oscuro: #4A2040;
-    --texto-medio: #7A4068;
-    --sombra-rosa: rgba(224, 82, 151, 0.15);
-    --sombra-rosa-hover: rgba(224, 82, 151, 0.30);
-
-    /* Fuentes */
-    --font-display: 'Pacifico', cursive;
-    --font-body: 'Poppins', sans-serif;
-
-    /* Radios */
-    --radius-card: 20px;
-    --radius-badge: 30px;
-
-    /* Transiciones */
-    --transition-smooth: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--font-body);
-    background: linear-gradient(180deg, var(--rosa-cream) 0%, var(--rosa-suave) 30%, var(--rosa-claro) 100%);
-    color: var(--texto-oscuro);
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* Fondo de burbujas / dots decorativos */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(circle at 10% 20%, rgba(255, 143, 171, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 90% 50%, rgba(224, 82, 151, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 50% 80%, rgba(255, 202, 212, 0.15) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
-}
-
 /* ===== HEADER ===== */
 #header {
     position: relative;
     text-align: center;
-    padding: 50px 20px 40px;
-    background: linear-gradient(135deg, var(--rosa-medio) 0%, var(--rosa-fuerte) 50%, var(--rosa-oscuro) 100%);
-    overflow: hidden;
+    padding: 55px 20px 30px;
+    background: linear-gradient(165deg, #3D1A2A 0%, #4A1D30 30%, #55203A 60%, #4A1D30 100%);
+    overflow: visible;
+    z-index: 2;
 }
 
+/* Puntos de brillo suaves */
 #header::before {
     content: '';
     position: absolute;
@@ -151,15 +162,29 @@ body::before {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 30px 30px;
-    animation: sparkle-drift 20s linear infinite;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 35px 35px;
+    animation: sparkle-drift 25s linear infinite;
     pointer-events: none;
+}
+
+/* Resplandor central */
+#header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 350px;
+    background: radial-gradient(ellipse, rgba(232, 74, 138, 0.15) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 @keyframes sparkle-drift {
     0% { transform: translate(0, 0); }
-    100% { transform: translate(30px, 30px); }
+    100% { transform: translate(35px, 35px); }
 }
 
 .header-content {
@@ -178,6 +203,7 @@ body::before {
 .logo-icon {
     font-size: 2rem;
     animation: bounce-gentle 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px var(--rosa-glow));
 }
 
 .logo-icon:nth-child(3) {
@@ -194,8 +220,9 @@ body::before {
     font-size: 3.8rem;
     color: var(--blanco);
     text-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.15),
-        0 0 40px rgba(255, 255, 255, 0.2);
+        0 0 30px rgba(232, 74, 138, 0.5),
+        0 0 60px rgba(232, 74, 138, 0.2),
+        0 2px 10px rgba(0, 0, 0, 0.4);
     letter-spacing: 2px;
 }
 
@@ -203,19 +230,37 @@ body::before {
     font-family: var(--font-body);
     font-weight: 300;
     font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--rosa-claro);
     letter-spacing: 1px;
     margin-top: 5px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
-.header-decoration {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
+/* ===== REGIONES DIVISORAS ONDULADAS ===== */
+.header-divider {
+    display: block;
     width: 100%;
-    height: 40px;
-    background: var(--rosa-cream);
-    clip-path: ellipse(55% 100% at 50% 100%);
+    height: 70px;
+    margin-top: -1px;
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.footer-divider {
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Antigua header-decoration por si queda alguna referencia */
+.header-decoration {
+    display: none;
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -224,7 +269,7 @@ body::before {
     z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px 20px 60px;
+    padding: 40px 20px 60px;
 }
 
 /* ===== SECTION HEADER ===== */
@@ -244,14 +289,17 @@ body::before {
 .section-header h2 {
     font-family: var(--font-display);
     font-size: 2.4rem;
-    color: var(--rosa-fuerte);
-    text-shadow: 0 2px 8px rgba(224, 82, 151, 0.15);
+    color: var(--rosa-cream);
+    text-shadow:
+        0 0 20px rgba(232, 74, 138, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .section-deco {
     font-size: 1.6rem;
-    color: var(--rosa-medio);
+    color: var(--rosa-pastel);
     animation: spin-slow 6s linear infinite;
+    filter: drop-shadow(0 0 6px var(--rosa-glow));
 }
 
 @keyframes spin-slow {
@@ -274,15 +322,16 @@ body::before {
 
 /* ===== PRODUCT CARD ===== */
 .product-card {
-    background: var(--blanco);
+    background: linear-gradient(155deg, var(--chocolate-card) 0%, #3E2A2A 100%);
     border-radius: var(--radius-card);
     overflow: hidden;
     box-shadow:
-        0 4px 20px var(--sombra-rosa),
-        0 1px 3px rgba(0, 0, 0, 0.04);
+        0 4px 25px rgba(0, 0, 0, 0.3),
+        0 1px 3px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(248, 164, 200, 0.06);
     transition: var(--transition-smooth);
     cursor: default;
-    border: 2px solid transparent;
+    border: 1.5px solid rgba(248, 164, 200, 0.1);
     position: relative;
 }
 
@@ -291,7 +340,7 @@ body::before {
     position: absolute;
     inset: 0;
     border-radius: var(--radius-card);
-    border: 2px solid transparent;
+    border: 1.5px solid transparent;
     transition: var(--transition-smooth);
     pointer-events: none;
 }
@@ -299,12 +348,14 @@ body::before {
 .product-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow:
-        0 12px 40px var(--sombra-rosa-hover),
-        0 4px 12px rgba(0, 0, 0, 0.06);
+        0 15px 50px rgba(232, 74, 138, 0.25),
+        0 5px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(248, 164, 200, 0.25);
 }
 
 .product-card:hover::after {
-    border-color: var(--rosa-medio);
+    border-color: var(--rosa-pastel);
+    box-shadow: 0 0 25px rgba(232, 74, 138, 0.15);
 }
 
 /* Imagen */
@@ -313,7 +364,7 @@ body::before {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--rosa-claro), var(--rosa-pastel));
+    background: linear-gradient(135deg, #3D2020, #2E1818);
 }
 
 .card-image {
@@ -325,6 +376,27 @@ body::before {
 
 .product-card:hover .card-image {
     transform: scale(1.08);
+}
+
+/* Goteo cremoso dentro de cada imagen */
+.card-image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    z-index: 2;
+    background: linear-gradient(155deg, var(--chocolate-card) 0%, #3E2A2A 100%);
+    clip-path: polygon(
+        0% 100%, 0% 50%,
+        4% 42%, 8% 55%, 11% 72%, 13% 90%, 15% 72%, 18% 50%,
+        22% 38%, 27% 42%, 30% 58%, 33% 78%, 36% 58%, 39% 42%,
+        44% 32%, 49% 38%, 52% 55%, 55% 75%, 58% 55%, 61% 38%,
+        66% 32%, 71% 42%, 74% 60%, 76% 85%, 78% 60%, 81% 42%,
+        86% 32%, 91% 42%, 94% 62%, 97% 48%, 100% 42%,
+        100% 100%
+    );
 }
 
 /* Badge */
@@ -339,32 +411,35 @@ body::before {
     font-size: 0.75rem;
     padding: 6px 14px;
     border-radius: var(--radius-badge);
-    box-shadow: 0 3px 12px rgba(194, 24, 91, 0.35);
+    box-shadow: 0 3px 15px rgba(232, 74, 138, 0.5);
     letter-spacing: 0.5px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .badge-porcion {
-    background: linear-gradient(135deg, #FF6B9D, var(--rosa-fuerte));
+    background: linear-gradient(135deg, var(--rosa-pastel), var(--rosa-fuerte));
 }
 
 .badge-especial {
     background: linear-gradient(135deg, #B24592, #7B1FA2);
+    box-shadow: 0 3px 15px rgba(178, 69, 146, 0.4);
 }
 
-/* Info */
+/* Info de la card */
 .card-info {
     padding: 18px 20px 22px;
     text-align: center;
-    background: linear-gradient(180deg, var(--blanco) 0%, var(--rosa-cream) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(232, 74, 138, 0.04) 100%);
+    position: relative;
 }
 
 .card-name {
     font-family: var(--font-display);
     font-size: 1.2rem;
-    color: var(--texto-oscuro);
+    color: var(--rosa-cream);
     margin-bottom: 8px;
     line-height: 1.4;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .card-price {
@@ -373,6 +448,7 @@ body::before {
     font-size: 1.35rem;
     color: var(--rosa-fuerte);
     letter-spacing: 0.5px;
+    text-shadow: 0 0 14px rgba(232, 74, 138, 0.3);
 }
 
 .card-price::before {
@@ -380,52 +456,57 @@ body::before {
     display: block;
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--rosa-medio), transparent);
+    background: linear-gradient(90deg, transparent, var(--rosa-pastel), transparent);
     margin: 0 auto 8px;
+    opacity: 0.6;
 }
 
 /* ===== PORCION CARD ===== */
 .porcion-card {
-    border: 2px solid var(--rosa-pastel);
+    border: 1.5px solid rgba(248, 164, 200, 0.14);
 }
 
 .porcion-card:hover {
-    border-color: transparent;
+    border-color: rgba(248, 164, 200, 0.3);
 }
 
 /* ===== FOOTER ===== */
 #footer {
-    background: linear-gradient(135deg, var(--rosa-fuerte), var(--rosa-oscuro));
-    padding: 35px 20px;
+    background: linear-gradient(165deg, #35181E 0%, #2C1E1E 100%);
+    padding: 40px 20px 35px;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
-#footer::before {
+/* Línea decorativa */
+#footer::after {
     content: '';
     position: absolute;
-    top: -2px;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background: linear-gradient(180deg, var(--rosa-cream) 0%, var(--rosa-suave) 100%);
-    clip-path: ellipse(55% 100% at 50% 0%);
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rosa-fuerte), var(--rosa-pastel), var(--rosa-fuerte), transparent);
+    opacity: 0.3;
 }
 
 .footer-brand {
     font-family: var(--font-display);
     font-size: 1.8rem;
-    color: var(--blanco);
+    color: var(--rosa-cream);
     margin-bottom: 6px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-shadow:
+        0 0 20px rgba(232, 74, 138, 0.35),
+        0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 .footer-text {
     font-family: var(--font-body);
     font-weight: 300;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--texto-medio);
 }
 
 /* ===== ANIMACIÓN DE ENTRADA ===== */
@@ -442,7 +523,7 @@ body::before {
     }
 }
 
-/* Delay escalonado para las tartas */
+/* Delay escalonado */
 #tarta-1 { animation-delay: 0.1s; }
 #tarta-2 { animation-delay: 0.15s; }
 #tarta-3 { animation-delay: 0.2s; }
@@ -454,6 +535,30 @@ body::before {
 #tarta-9 { animation-delay: 0.5s; }
 #porcion-jefa { animation-delay: 0.55s; }
 #porcion-especial { animation-delay: 0.6s; }
+
+/* ===== SCROLLBAR PERSONALIZADO ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--chocolate);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--rosa-fuerte), var(--rosa-oscuro));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--rosa-cream), var(--rosa-fuerte));
+}
+
+/* ===== SELECCIÓN DE TEXTO ===== */
+::selection {
+    background: var(--rosa-fuerte);
+    color: var(--blanco);
+}
 
 /* ===== RESPONSIVE — TABLET ===== */
 @media (max-width: 900px) {
@@ -474,12 +579,20 @@ body::before {
         grid-template-columns: repeat(2, 1fr);
         max-width: 500px;
     }
+
+    .header-divider {
+        height: 45px;
+    }
+
+    .footer-divider {
+        height: 35px;
+    }
 }
 
 /* ===== RESPONSIVE — MÓVIL ===== */
 @media (max-width: 600px) {
     #header {
-        padding: 35px 15px 30px;
+        padding: 35px 15px 25px;
     }
 
     .brand-name {
@@ -503,7 +616,7 @@ body::before {
     }
 
     #main-content {
-        padding: 20px 12px 40px;
+        padding: 25px 12px 40px;
     }
 
     .products-grid {
@@ -541,6 +654,14 @@ body::before {
 
     .footer-brand {
         font-size: 1.4rem;
+    }
+
+    .header-divider {
+        height: 35px;
+    }
+
+    .footer-divider {
+        height: 25px;
     }
 }
 
