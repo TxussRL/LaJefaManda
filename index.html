@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>La Jefa | Menú de Tartas Artesanales</title>
+    <meta name="description"
+        content="La Jefa - Menú de tartas artesanales y porciones especiales. Descubre nuestras deliciosas creaciones.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <!-- Google Fonts: Pacifico (pastelería) + Poppins (cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ========== BARRA DE IDIOMA ========== -->
+    <div id="lang-bar">
+        <div class="lang-inner">
+            <div class="lang-buttons">
+                <button class="lang-btn active" data-lang="es" id="btn-es">Español</button>
+                <button class="lang-btn" data-lang="ca" id="btn-ca">Català</button>
+                <button class="lang-btn" data-lang="en" id="btn-en">English</button>
+                <button class="lang-btn" data-lang="fr" id="btn-fr">Français</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <header id="header">
+        <div class="header-content">
+            <div class="logo-area">
+                <span class="logo-icon"></span>
+                <h1 class="brand-name">La Jefa Manda</h1>
+                <span class="logo-icon"></span>
+            </div>
+            <p class="tagline" data-i18n="tagline">Tartas artesanales hechas con amor</p>
+        </div>
+        <div class="header-decoration"></div>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main id="main-content">
+
+        <!-- ===== SECCIÓN: TARTAS MEDIANAS ===== -->
+        <section id="tartas-medianas" class="menu-section">
+            <div class="section-header">
+                <span class="section-deco">✿</span>
+                <h2 data-i18n="sectionCakes">Tartas Medianas</h2>
+                <span class="section-deco">✿</span>
+            </div>
+
+            <div class="products-grid">
+
+                <!-- ======================================================
+                     TARTAS MEDIANAS — PARA AÑADIR MÁS TARTAS:
+                     Copia un bloque <div class="product-card"> ... </div>
+                     y pégalo justo ANTES del comentario "FIN TARTAS MEDIANAS".
+                     Cambia el src de la imagen, el nombre y el precio.
+                     ====================================================== -->
+
+                <div class="product-card" id="tarta-1">
+                    <div class="card-image-wrapper">
+                        <!-- Cambia el src por la ruta de tu imagen, p.ej: src="img/tarta1.jpg" -->
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Tarta+1" alt="Tarta de Fresa"
+                            class="card-image">
+                        <!-- <div class="card-badge" data-i18n="badgePopular">⭐ Popular</div>
+                             <div class="card-badge" data-i18n="badgeNew">🔥 Novedad</div> -->
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="cake1">Tarta de Fresa</h3>
+                        <p class="card-price">14,50€</p>
+                    </div>
+                </div>
+
+                <div class="product-card" id="tarta-2">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Tarta+2" alt="Tarta de Chocolate"
+                            class="card-image">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="cake2">Tarta de Chocolate</h3>
+                        <p class="card-price">13,90€</p>
+                    </div>
+                </div>
+
+                <div class="product-card" id="tarta-3">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Tarta+3" alt="Tarta Red Velvet"
+                            class="card-image">
+
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="cake3">Tarta Red Velvet</h3>
+                        <p class="card-price">14,50€</p>
+                    </div>
+                </div>
+
+                <div class="product-card" id="tarta-4">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Tarta+4" alt="Tarta de Limón"
+                            class="card-image">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="cake4">Tarta de Limón</h3>
+                        <p class="card-price">12,90€</p>
+                    </div>
+                </div>
+
+                <div class="product-card" id="tarta-5">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Tarta+5" alt="Tarta de Zanahoria"
+                            class="card-image">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="cake5">Tarta de Zanahoria</h3>
+                        <p class="card-price">13,50€</p>
+                    </div>
+                </div>
+
+                <div class="product-card" id="tarta-6">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Tarta+6" alt="Tarta Tres Chocolates"
+                            class="card-image">
+
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="cake6">Tarta Tres Chocolates</h3>
+                        <p class="card-price">14,50€</p>
+                    </div>
+                </div>
+
+                <div class="product-card" id="tarta-7">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Tarta+7" alt="Tarta de Oreo"
+                            class="card-image">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="cake7">Tarta de Oreo</h3>
+                        <p class="card-price">13,90€</p>
+                    </div>
+                </div>
+
+                <div class="product-card" id="tarta-8">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Tarta+8" alt="Tarta de Frambuesa"
+                            class="card-image">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="cake8">Tarta de Frambuesa</h3>
+                        <p class="card-price">13,50€</p>
+                    </div>
+                </div>
+
+                <div class="product-card" id="tarta-9">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Tarta+9" alt="Tarta Lotus Biscoff"
+                            class="card-image">
+
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="cake9">Tarta Lotus Biscoff</h3>
+                        <p class="card-price">14,50€</p>
+                    </div>
+                </div>
+
+                <!-- FIN TARTAS MEDIANAS — Pega nuevas tartas ANTES de esta línea -->
+
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN: PORCIONES ===== -->
+        <section id="porciones" class="menu-section">
+            <div class="section-header">
+                <span class="section-deco">✿</span>
+                <h2 data-i18n="sectionSlices">Porciones</h2>
+                <span class="section-deco">✿</span>
+            </div>
+
+            <div class="products-grid porciones-grid">
+
+                <!-- ======================================================
+                     PORCIONES — PARA AÑADIR MÁS PORCIONES:
+                     Copia un bloque <div class="product-card porcion-card"> ... </div>
+                     y pégalo justo ANTES del comentario "FIN PORCIONES".
+                     ====================================================== -->
+
+                <div class="product-card porcion-card" id="porcion-jefa">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Porción" alt="Porción de La Jefa"
+                            class="card-image">
+                        <!-- <div class="card-badge badge-porcion">🍰 La Jefa</div> -->
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" data-i18n="sliceJefa">Porción de La Jefa</h3>
+                        <p class="card-price">5,50€</p>
+                    </div>
+                </div>
+
+                <div class="product-card porcion-card" id="porcion-especial">
+                    <div class="card-image-wrapper">
+                        <img src="https://placehold.co/400x400/FFB6C1/fff?text=Especial" alt="Porción Especial"
+                            class="card-image">
+                        <div class="card-badge badge-especial" data-i18n="badgeSpecial">Especial</div>
+                    </div>
+                    <div class="card-info">
+                        <!-- <h3 class="card-name" data-i18n="sliceSpecial">🍰 Porción Especial</h3> -->
+                        <p class="card-price">6,00€</p>
+                    </div>
+                </div>
+
+                <!-- FIN PORCIONES — Pega nuevas porciones ANTES de esta línea -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer">
+        <div class="footer-content">
+            <p class="footer-brand">La Jefa</p>
+            <p class="footer-text" data-i18n="footerText">Hecho con 💖 y mucha nata</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
