@@ -34,8 +34,8 @@
     --sombra-rosa-hover: rgba(232, 74, 138, 0.4);
 
     /* Fuentes */
-    --font-display: 'Pacifico', cursive;
-    --font-body: 'Poppins', sans-serif;
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
 
     /* Radios */
     --radius-card: 22px;
